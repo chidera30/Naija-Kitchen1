@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naija Kitchen</title>
+    <link rel="stylesheet" href="stely.css" />
+    <link rel="stylesheet" href="stely.css" />
+  </head>
+  <body>
+    <!--CSTOMER HOMEPAGE MENU AND BOOKING-->
+    <div>
+      <header class="navbar">
+        <div class="logo">Naija Kitchen</div>
+        <div class="navigation-menu">
+          <nav class="nav-links">
+            <div>
+              <a href="#home">Home</a>
+            </div>
+            <div>
+              <a href="#about">About us</a>
+            </div>
+            <div>
+              <a href="#menu">Menu</a>
+            </div>
+            <div>
+              <a href="#book-table">Book Table</a>
+            </div>
+            <div>
+              <a href="#contact">Contact</a>
+            </div>
+          </nav>
+
+          <div class="nav-cart">
+            <button class="navbar-toggle">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <div class="menu-icon"></div>
+            <div>
+              <button id="cart-toggle-btn" class="cart" onclick="toggleCart()">
+                Cart
+                <span id="cart-badge">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+          <h3>Your Order</h3>
+          <button type="button" class="close-btn" onclick="toggleCart()">
+            &times;
+          </button>
+        </div>
+
+        <div id="cart-items-list" class="drawer-body">
+          <p class="empty-msg" id="emptyMsg">Your cart is empty.</p>
+        </div>
+
+        <div class="drawer-footer">
+          <h4>Total: &#8358;<span id="cart-total">0</span></h4>
+
+          <div class="order-type-box">
+            <label>
+              <input
+                type="radio"
+                name="orderType"
+                value="dinein"
+                id="cartUseName"
+                checked
+                onclick="toggleOrderFields('dinein')"
+              />
+              Eat in shop
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="orderType"
+                value="delivery"
+                id="cartUseNumber"
+                onclick="toggleOrderFields('delivery')"
+              />
+              Delivery
+            </label>
+          </div>
+          <div id="dine-in-fields" class="user-details" style="display: none">
+            <input type="text" id="cust-name" placeholder="Your Name" />
+            <input
+              type="number"
+              id="table-num"
+              placeholder="Table Number (e.g. 5)"
+            />
+          </div>
+
+          <div id="delivery-fields" class="user-details" style="display: none">
+            <input
+              type="text"
+              id="delivery-address"
+              placeholder="Delivery Address"
+            />
+            <input type="tel" id="phone-num" placeholder="Phone Number" />
+          </div>
+          <button
+            type="button"
+            class="submit-order-btn"
+            onclick="submitOrder(event)"
+          >
+            Place Order
+          </button>
+        </div>
+      </div>
+      <section class="home-section" id="home">
+        <div class="home-text">
+          <h1>
+            Welcome to Naija <br />
+            Kitchen!
+          </h1>
+          <p class="tagline">
+            Browse our menu to order online
+            <br />
+            or book your table below
+          </p>
+        </div>
+        <div class="home-images">
+          <div class="home-image-one">
+            <img
+              class="home-img-pp"
+              src="images/foodone (3).png"
+              alt=""
+              width="420px"
+            />
+
+            <img
+              class="home-img1"
+              src="images/food5.png (2).png"
+              alt=""
+              width="100px"
+            />
+            <img
+              class="home-img2"
+              src="images/food3.png.png"
+              alt=""
+              width="95px"
+            />
+            <img
+              class="home-img3"
+              src="images/food6.png.png"
+              alt=""
+              width="95px"
+            />
+          </div>
+        </div>
+        <div class="store-status" id="storeStatus">
+          <span class="status-indicator" id="statusDot"></span>
+          <span id="statusText">Checking staus...</span>
+          <span class="hours-info">(Hours: 8:00 AM - 10:00 PM)</span>
+        </div>
+      </section>
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/about-image.jpg" alt="" width="200px" />
+          </div>
+          <div class="about-text">
+            <h2>About Naija Kitchen</h2>
+            <p>
+              Food or drinks?
+              <br />We've got you covered! <br />Dine in or order from home for
+              authentic Nigerian meals.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="menu-section" id="menu">
+        <h2>Our Menu Categories</h2>
+        <div class="menu">
+          <div class="menu-btn">
+            <button class="cat-btn active" onclick="filterMenu(event, 'soups')">
+              Soups
+            </button>
+            <button class="cat-btn" onclick="filterMenu(event, 'rice')">
+              Rice
+            </button>
+            <button class="cat-btn" onclick="filterMenu(event, 'sides')">
+              Sides & Meat
+            </button>
+            <button class="cat-btn" onclick="filterMenu(event, 'porridge')">
+              Porridge
+            </button>
+            <button class="cat-btn" onclick="filterMenu(event, 'drinks')">
+              Drinks
+            </button>
+          </div>
+          <div class="menu-cards-container">
+            <div class="menu-cards soups">
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="images/food3.png.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Egusi</p>
+                  <div class="swallow-options">
+                    <label for="book-time" class="egusi-option"
+                      >Select swallow</label
+                    >
+                    <select id="swallow-egusi" required>
+                      <option value="" disabled selected>Choose</option>
+                      <option value="Fufu">Fufu</option>
+                      <option value="Eba">Eba</option>
+                      <option value="Semo">Semo</option>
+                    </select>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;5,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Egusi', 5000, 'swallow-egusi')"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="images/food3.png.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Ogbono</p>
+                  <div class="swallow-options">
+                    <label for="book-time">Select swallow</label>
+                    <select id="book-time" required>
+                      <option value="" disabled selected>Choose</option>
+                      <option value="fufu">Fufu</option>
+                      <option value="eba">Eba</option>
+                      <option value="semo">Semo</option>
+                    </select>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;4,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Ogbono 3', 4000, null, null)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-cards rice">
+              <div class="value-item">
+                <div class="value-text">
+                  <div class="value-img">
+                    <img src="images/food5.png (2).png" alt="" />
+                  </div>
+                  <div class="value-text">
+                    <p>Ofada Rice</p>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;8,500</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Ofada Rice', 8500, null, null)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-cards sides">
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="images/food5.png (2).png" alt="" />
+                </div>
+                <div class="value-text">
+                  <div class="value-text">
+                    <p>Frid Chcken</p>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;3,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Frid Chcken', 3000, null, null)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="images/food5.png (2).png" alt="" />
+                </div>
+                <div class="value-text">
+                  <div class="value-text">
+                    <p>Grilled Fish</p>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;3,500</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Grilled Fish', 3500, null, null)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-cards porridge">
+              <div class="value-item noodles">
+                <div class="value-img">
+                  <img src="images/Noodles and eggs.jpg" alt="" />
+                </div>
+                <div class="value-text">
+                  <div class="value-text">
+                    <p>Noodles and eggs</p>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;2,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Noodles and eggs', 2000, null, null)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-cards drinks">
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="images/drink-fanta.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Fanta laranja</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;5,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Fanta laranja', 5000)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="book-section" id="book-table">
+        <div class="section-header">
+          <h2>Reserve A Table</h2>
+          <p>
+            Book your space ahead of time for a wonderful dining experience.
+          </p>
+        </div>
+        <form
+          id="table-booking-form bookingForm"
+          onsubmit="sendBookingWhatsApp(event)"
+        >
+          <div class="booking-g">
+            <div class="form-g">
+              <input type="text" id="bookName" placeholder="Full Name" />
+            </div>
+            <div class="form-g">
+              <input type="number" id="bookPhone" placeholder="Phone Number" />
+            </div>
+            <div class="form-g">
+              <label for="book-time">Select Date</label>
+              <input
+                type="date"
+                id="bookDate"
+                required
+                placeholder="Select Date"
+              />
+            </div>
+
+            <div class="form-g">
+              <label for="book-time">Select Time</label>
+              <select id="bookTime" required>
+                <option value="" disabled selected>Choose a time slot</option>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM (Lucnch)</option>
+                <option value="02:00 PM">02:00 PM (Lucnch)</option>
+                <option value="04:00 PM">04:00 PM (Late Lucnch)</option>
+                <option value="06:00 PM">06:00 PM (Dinner)</option>
+                <option value="08:00 PM">08:00 PM (Dinner)</option>
+              </select>
+            </div>
+
+            <div class="form-g">
+              <input
+                type="number"
+                id="bookGuests"
+                min="1"
+                placeholder="Number of Guests"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="book-now-btn submit-btn">Submit</button>
+        </form>
+      </section>
+      <section class="contact-section" id="contact">
+        <iframe
+          class="map-background"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15886.911475726202!2d7.5350!3d5.4750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042cb3a90899f8d%3A0xa6428c8db1824c25!2sMichael%20Okpara%20University%20of%20Agriculture%2C%20Umudike!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+        <div class="contact-wrapper">
+          <div class="contact-card">
+            <p>Contact</p>
+            <h3>Send a Message</h3>
+
+            <form
+              onsubmit="sendContactWhatsApp(event)"
+              action="#"
+              method="POST"
+              id="contactForm"
+              class="contact-form"
+            >
+              <div class="contact-info">
+                <input
+                  id="contactName"
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+
+              <div class="contact-info">
+                <input
+                  id="contactEmail"
+                  type="tel"
+                  class="number"
+                  name="number"
+                  placeholder="Phone number"
+                  required
+                />
+              </div>
+
+              <div class="contact-info">
+                <textarea
+                  id="contactMsg"
+                  name="message"
+                  class="message"
+                  placeholder="Write your message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit submit-btn">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="main-footer">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3 class="footer-brand">Naija Kitchen</h3>
+            <p>
+              Delivering authentic, delicious Nigerian meals straight to your
+              table or doorstep.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#menu">Our Menu</a></li>
+              <li><a href="#booking">Book A Table</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Opening Hours</h4>
+            <p>Monday - Sunday</p>
+            <p>8:00 AM - 10:00 PM</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Naija Kitchen. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
