@@ -228,7 +228,7 @@ nav a:hover {
 .home-section {
   background-image:
     linear-gradient(rgba(44, 26, 3, 0.904), rgba(116, 45, 4, 0.829)),
-    url(images/Naija-kitchen.png);
+    url(Naija-kitchen.png);
   background-size: cover;
   background-position: center;
   padding: 40px 80px 40px 80px;
