@@ -676,11 +676,6 @@ nav a:hover {
   .menu-section {
     padding: 5px 7px 5px 7px;
   }
-  .menu-cards {
-    display: grid;
-    grid-template-columns: 190px 190px;
-    gap: 20px;
-  }
   .form-g input,
   .form-g select {
     width: 100%;
