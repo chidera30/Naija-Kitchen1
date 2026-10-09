@@ -680,4 +680,8 @@ nav a:hover {
   .form-g select {
     width: 100%;
   }
+  .cart-drawer.open {
+    margin-bottom: 100px;
+    right: 0;
+  }
 }
