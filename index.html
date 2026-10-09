@@ -11,7 +11,7 @@
     <!--CSTOMER HOMEPAGE MENU AND BOOKING-->
     <div>
       <header class="navbar">
-        <div class="logo">Naija Kitchen</div>
+        <div class="logo"><span class="naij-icon">N</span>aija Kitchen</div>
         <div class="navigation-menu">
           <nav class="nav-links">
             <div>
@@ -114,7 +114,7 @@
       <section class="home-section" id="home">
         <div class="home-text">
           <h1>
-            Welcome to Naija <br />
+            Welcome to <span class="naij-icon">N</span>aija <br />
             Kitchen!
           </h1>
           <p class="tagline">
@@ -127,26 +127,26 @@
           <div class="home-image-one">
             <img
               class="home-img-pp"
-              src="foodone (3).png"
+              src="images/foodone (3).png"
               alt=""
               width="420px"
             />
 
             <img
               class="home-img1"
-              src="food5.png (2).png"
+              src="images/food5.png (2).png"
               alt=""
               width="100px"
             />
             <img
               class="home-img2"
-              src="food3.png.png"
+              src="images/food3.png.png"
               alt=""
               width="95px"
             />
             <img
               class="home-img3"
-              src="food6.png.png"
+              src="images/food6.png.png"
               alt=""
               width="95px"
             />
@@ -160,11 +160,8 @@
       </section>
       <section id="about" class="about-section">
         <div class="about-content">
-          <div class="about-image">
-            <img src="images/about-image.jpg" alt="" width="200px" />
-          </div>
           <div class="about-text">
-            <h2>About Naija Kitchen</h2>
+            <h2>About <span class="naij-icon">N</span>aija Kitchen</h2>
             <p>
               Food or drinks?
               <br />We've got you covered! <br />Dine in or order from home for
@@ -174,7 +171,7 @@
         </div>
       </section>
       <section class="menu-section" id="menu">
-        <h2>Our Menu Categories</h2>
+        <h2>Menu</h2>
         <div class="menu">
           <div class="menu-btn">
             <button class="cat-btn active" onclick="filterMenu(event, 'soups')">
@@ -186,9 +183,6 @@
             <button class="cat-btn" onclick="filterMenu(event, 'sides')">
               Sides & Meat
             </button>
-            <button class="cat-btn" onclick="filterMenu(event, 'porridge')">
-              Porridge
-            </button>
             <button class="cat-btn" onclick="filterMenu(event, 'drinks')">
               Drinks
             </button>
@@ -197,16 +191,13 @@
             <div class="menu-cards soups">
               <div class="value-item">
                 <div class="value-img">
-                  <img src="food3.png.png" alt="" />
+                  <img src="image/Special-Egusi-Soup.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <p>Egusi</p>
+                  <p>Special Egusi Soup</p>
                   <div class="swallow-options">
-                    <label for="book-time" class="egusi-option"
-                      >Select swallow</label
-                    >
                     <select id="swallow-egusi" required>
-                      <option value="" disabled selected>Choose</option>
+                      <option value="" disabled selected>Select swallow</option>
                       <option value="Fufu">Fufu</option>
                       <option value="Eba">Eba</option>
                       <option value="Semo">Semo</option>
@@ -216,7 +207,7 @@
                     <p class="price">&#8358;5,000</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Egusi', 5000, 'swallow-egusi')"
+                      onclick="addToCart(' Egusi Soup', 5000, 'swallow-egusi')"
                     >
                       &plus;
                     </button>
@@ -225,24 +216,102 @@
               </div>
               <div class="value-item">
                 <div class="value-img">
-                  <img src="food3.png.png" alt="" />
+                  <img src="image/Ogbono-soup.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <p>Ogbono</p>
+                  <p>Ogbono soup</p>
                   <div class="swallow-options">
-                    <label for="book-time">Select swallow</label>
-                    <select id="book-time" required>
-                      <option value="" disabled selected>Choose</option>
-                      <option value="fufu">Fufu</option>
-                      <option value="eba">Eba</option>
-                      <option value="semo">Semo</option>
+                    <select id="swallow-ogbono" required>
+                      <option value="" disabled selected>Select swallow</option>
+                      <option value="Fufu">Fufu</option>
+                      <option value="Eba">Eba</option>
+                      <option value="Semo">Semo</option>
                     </select>
                   </div>
                   <div class="price-action">
-                    <p class="price">&#8358;4,000</p>
+                    <p class="price">&#8358;4,500</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Ogbono 3', 4000, null, null)"
+                      onclick="
+                        addToCart(' Ogbono Soup', 4500, 'swallow-ogbono')
+                      "
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Afang-Soup.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Afang Soup</p>
+                  <div class="swallow-options">
+                    <select id="swallow-afang" required>
+                      <option value="" disabled selected>Select swallow</option>
+                      <option value="Fufu">Fufu</option>
+                      <option value="Eba">Eba</option>
+                      <option value="Semo">Semo</option>
+                    </select>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;5,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart(' Afang Soup', 5200, 'swallow-afang')"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Efo-riro-soup.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Efo Riro Soup</p>
+                  <div class="swallow-options">
+                    <select id="swallow-efo-riro" required>
+                      <option value="" disabled selected>Select swallow</option>
+                      <option value="Fufu">Fufu</option>
+                      <option value="Eba">Eba</option>
+                      <option value="Semo">Semo</option>
+                    </select>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;5,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="
+                        addToCart('Efo Riro Soup', 5200, 'swallow-efo-riro')
+                      "
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Okra-soup.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Okra Soup</p>
+                  <div class="swallow-options">
+                    <select id="swallow-okra" required>
+                      <option value="" disabled selected>Select swallow</option>
+                      <option value="Fufu">Fufu</option>
+                      <option value="Eba">Eba</option>
+                      <option value="Semo">Semo</option>
+                    </select>
+                  </div>
+                  <div class="price-action">
+                    <p class="price">&#8358;4,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Okra Soup', 4200, 'swallow-okra')"
                     >
                       &plus;
                     </button>
@@ -252,18 +321,54 @@
             </div>
             <div class="menu-cards rice">
               <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Jollof-rice.png" alt="" />
+                </div>
                 <div class="value-text">
-                  <div class="value-img">
-                    <img src="food5.png (2).png" alt="" />
-                  </div>
-                  <div class="value-text">
-                    <p>Ofada Rice</p>
-                  </div>
+                  <p>Party Jollof Rice</p>
                   <div class="price-action">
-                    <p class="price">&#8358;8,500</p>
+                    <p class="price">&#8358;3,500</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Ofada Rice', 8500, null, null)"
+                      onclick="
+                        addToCart('Party Jollof Rice', 3500, 'swallow-egusi')
+                      "
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Fried-Rice.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Special Fried Rice</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;3,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="
+                        addToCart('Special Fried Rice', 3200, 'swallow-egusi')
+                      "
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/White-Rice-&-Stew.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>White Rice and Stew</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;3,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('White Rice and Stew', 3200)"
                     >
                       &plus;
                     </button>
@@ -274,17 +379,15 @@
             <div class="menu-cards sides">
               <div class="value-item">
                 <div class="value-img">
-                  <img src="food5.png (2).png" alt="" />
+                  <img src="image/Fried-chicken.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <div class="value-text">
-                    <p>Frid Chcken</p>
-                  </div>
+                  <p>Fried chicken</p>
                   <div class="price-action">
-                    <p class="price">&#8358;3,000</p>
+                    <p class="price">&#8358;2,500</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Frid Chcken', 3000, null, null)"
+                      onclick="addToCart('Fried chicken', 2500)"
                     >
                       &plus;
                     </button>
@@ -293,38 +396,117 @@
               </div>
               <div class="value-item">
                 <div class="value-img">
-                  <img src="food5.png (2).png" alt="" />
+                  <img src="image/Deep-fried-beef.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <div class="value-text">
-                    <p>Grilled Fish</p>
-                  </div>
+                  <p>Deep fried beef</p>
                   <div class="price-action">
-                    <p class="price">&#8358;3,500</p>
+                    <p class="price">&#8358;500</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Grilled Fish', 3500, null, null)"
+                      onclick="addToCart('Deep fried beef', 500)"
                     >
                       &plus;
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="menu-cards porridge">
-              <div class="value-item noodles">
+              <div class="value-item">
                 <div class="value-img">
-                  <img src="Noodles and eggs.jpg" alt="" />
+                  <img src="image/Seasoned-and-fried-turkey.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <div class="value-text">
-                    <p>Noodles and eggs</p>
-                  </div>
+                  <p>Fried turkey</p>
                   <div class="price-action">
-                    <p class="price">&#8358;2,000</p>
+                    <p class="price">&#8358;2,500</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Noodles and eggs', 2000, null, null)"
+                      onclick="addToCart('Fried turkey', 2500)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Crispy-fried-fish.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Crispy fried fish</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;1000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Crispy fried fish', 1000)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Fresh-catfish-cooked.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Catfish Pepper</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;3800</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Catfish Pepper', 3800)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/Goat-Meat-Pepper-Soup.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Goat Meat Pepper Soup</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;6,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Goat Meat Pepper Soup', 6000)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/chicken-pepper-soup.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>chicken pepper Soup</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;5,500</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('chicken pepper Soup', 5500)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/whole-fried-chicken.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Whole fried chicken</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;21,500</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Whole fried chicken', 21500)"
                     >
                       &plus;
                     </button>
@@ -335,15 +517,151 @@
             <div class="menu-cards drinks">
               <div class="value-item">
                 <div class="value-img">
-                  <img src="drink-fanta.png" alt="" />
+                  <img src="image/drink-Bottled-Water.png" alt="" />
                 </div>
                 <div class="value-text">
-                  <p>Fanta laranja</p>
+                  <p>Bottled Water</p>
                   <div class="price-action">
-                    <p class="price">&#8358;5,000</p>
+                    <p class="price">&#8358;300</p>
                     <button
                       class="add-cart-btn"
-                      onclick="addToCart('Fanta laranja', 5000)"
+                      onclick="addToCart('Bottled Water', 300)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-coca-cola.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>ColaCoca</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;900</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('ColaCoca', 900)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-sprite.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Sprite</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;900</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Sprite', 900)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-pepsi.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Pepsi</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;900</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Pepsi', 900)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-fanta.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Fanta</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;800</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Fanta', 800)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-monster.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Monster</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;800</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Monster', 800)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-red-bull.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Red Bull</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;1,000</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Monster', 1000)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-guinness.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Guinness</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;1,100</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Guinness', 1100)"
+                    >
+                      &plus;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-img">
+                  <img src="image/drink-heineken.png" alt="" />
+                </div>
+                <div class="value-text">
+                  <p>Heineken</p>
+                  <div class="price-action">
+                    <p class="price">&#8358;1,200</p>
+                    <button
+                      class="add-cart-btn"
+                      onclick="addToCart('Heineken', 1200)"
                     >
                       &plus;
                     </button>
